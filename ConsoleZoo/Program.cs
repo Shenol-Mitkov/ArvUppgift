@@ -43,11 +43,12 @@ namespace ConsoleZoo
             bella.Shiver();
 
             Console.WriteLine();
-            Console.WriteLine("=== Info om ett djur ===");
-            tank.DisplayInfo();
-            Console.WriteLine($"Breed: {tank.Breed}");
-            Console.WriteLine($"Wrinkles: {tank.WrinkleCount}");
-            tank.GiveFood();
+            Console.WriteLine("=== Info om ett slumpat djur ===");
+            Random random = new Random();
+            int index = random.Next(animals.Count); // Ett tal från 0 till antal djur - 1
+            Animal randomAnimal = animals[index];
+            randomAnimal.DisplayInfo();
+            randomAnimal.GiveFood();
 
             Console.ReadKey();
         }
