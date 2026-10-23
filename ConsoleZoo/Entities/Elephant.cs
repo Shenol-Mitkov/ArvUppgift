@@ -8,9 +8,20 @@ namespace ConsoleZoo.Entities
     {
         public string TuskLength { get; set; }
 
-        public Elephant(string name, int age, string species, string habitat, string diet, string tuskLength) : base(name, age, species, habitat, diet)
+        // Constructor med defaultvärden för både Elephant och Animal
+        public Elephant() : base("Dumbo", 10, "Elephant", "Savanna", "Grass")
+        {
+            TuskLength = "1 meter";
+        }
+
+        public Elephant(string name, int age, string habitat, string diet, string tuskLength) : base(name, age, "Elephant", habitat, diet)
         {
             TuskLength = tuskLength;
+        }
+
+        public override void MakeSound()
+        {
+            Console.WriteLine($"{Name} says: Pawoooo!");
         }
 
         public void Trumpet()

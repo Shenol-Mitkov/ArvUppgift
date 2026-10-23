@@ -12,6 +12,16 @@ namespace ConsoleZoo.Entities
         public string Habitat { get; set; }
         public string Diet { get; set; }
 
+        // Constructor med defaultvärden
+        public Animal()
+        {
+            Name = "Unknown";
+            Age = 1;
+            Species = "Unknown species";
+            Habitat = "Unknown habitat";
+            Diet = "Food";
+        }
+
         public Animal(string name, int age, string species, string habitat, string diet)
         {
             Name = name;
@@ -30,7 +40,8 @@ namespace ConsoleZoo.Entities
             Console.WriteLine($"Diet: {Diet}");
         }
 
-        public void MakeSound()
+        // virtual gör att subklasserna kan skriva över metoden med override
+        public virtual void MakeSound()
         {
             Console.WriteLine($"{Name} makes a sound.");
         }
@@ -39,7 +50,5 @@ namespace ConsoleZoo.Entities
         {
             Console.WriteLine($"{Name} is eating {Diet}.");
         }
-
-
     }
 }
