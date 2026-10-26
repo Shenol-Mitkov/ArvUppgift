@@ -12,6 +12,16 @@ namespace ConsoleZoo.Entities
         public string Habitat { get; set; }
         public string Diet { get; set; }
 
+        // Constructor med defaultvärden
+        public Animal()
+        {
+            Name = "Unknown";
+            Age = 1;
+            Species = "Unknown species";
+            Habitat = "Unknown habitat";
+            Diet = "Food";
+        }
+
         public Animal(string name, int age, string species, string habitat, string diet)
         {
             Name = name;
